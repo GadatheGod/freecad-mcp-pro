@@ -1,0 +1,92 @@
+---
+ GuiCommand:
+   Name: Std Workbench
+   Name/ru: Std Workbench
+   Empty: 1
+   MenuLocation: {{StdMenu}} , Верстак
+   Workbenches: Workbenches/ru
+   SeeAlso: 
+---
+
+# Std Workbench/ru
+
+
+</div>
+
+
+
+## Описание
+
+The **Std Workbench** command activates a selected [workbench](Workbenches.md).
+
+![](images/Std_Workbench_ComboBox_Icons_And_Text.png ) 
+*The default ComboBox Workbench selector type*
+
+![](images/Std_Workbench_TabBar_Icons_Only.png ) 
+*The optional TabBar Workbench selector type (here displayed with icons only) <small>(v1.0*)</small> 
+
+
+
+## Применение
+
+1.  There are several ways to invoke the command:
+    -   Select a workbench from the ComboBox or TabBar (<small>(v1.0)</small> ) in the Workbench toolbar.
+    -   Press the **<img src="images/List-add.svg" width=x16px><img src="images/Toolbar_flyout_arrow.svg" width=x16px>** button on the TabBar to select a workbench that has been disabled in the [preferences](Preferences_Editor#Available_Workbenches.md) from the menu that opens.
+    -   Select a workbench from the **View → Workbench** sub-menu.
+
+
+
+## Примечания
+
+-   Additional [External Workbenches](External_Workbenches.md) can be downloaded with the <img alt="" src=images/Std_AddonMgr.svg  style="width:24px;"> [Addon Manager](Std_AddonMgr.md).
+
+
+
+## Настройки
+
+See also: [Preferences Editor](Preferences_Editor.md).
+
+-   A [page with related preferences](Preferences_Editor#Available_Workbenches.md) is available: **Edit → Preferences... → Workbenches → Available Workbenches**. You can change the **Start up workbench**, the **Workbench selector type**, and more. The **<img src="images/List-add.svg" width=x16px><img src="images/Toolbar_flyout_arrow.svg" width=x16px>** button on the TabBar gives access to this page via its menu.
+
+
+
+## Программирование
+
+
+<div class="mw-translate-fuzzy">
+
+
+**Смотрите так же:**
+
+[Основы составления скриптов в FreeCAD](FreeCAD_Scripting_Basics/ru.md).
+
+
+</div>
+
+To change the workbench use the `activateWorkbench` method of the FreeCADGui module.
+
+
+```python
+import FreeCADGui
+
+FreeCADGui.activateWorkbench("PartDesignWorkbench")
+```
+
+
+<div class="mw-translate-fuzzy">
+
+
+
+
+
+</div>
+
+
+{{Std Base navi
+
+}}  {{Interface navi}}
+
+
+
+---
+⏵ [documentation index](../README.md) > Std Workbench/ru

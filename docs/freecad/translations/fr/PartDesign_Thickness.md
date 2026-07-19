@@ -1,0 +1,160 @@
+---
+ GuiCommand:
+   Name: PartDesign Thickness
+   Name/fr: PartDesign Évidement
+   MenuLocation: PartDesign , Appliquer une fonction d'habillage , Évidement
+   Workbenches: PartDesign_Workbench/fr
+   Version: 0.17
+   SeeAlso: Part_Thickness/fr
+---
+
+# PartDesign Thickness/fr
+
+## Description
+
+L\'outil <img alt="" src=images/PartDesign_Thickness.svg  style="width:24px;"> **PartDesign Évidement** transforme un corps solide en un objet creux avec au moins une face ouverte, en donnant à chacune de ses faces restantes une épaisseur uniforme. Il ajoute un objet **Thickness** au document avec sa représentation correspondante dans la [vue en arborescence](Tree_view/fr.md).
+
+<img alt="" src=images/PartDesign_Thickness_example.svg  style="width:400px;"> 
+*Solide de base (A) → Solide avec la face sélectionnée à ouvrir (B) → Objet creux résultant (C)*
+
+
+
+## Utilisation
+
+
+
+### Créer un évidement 
+
+1.  [Activez](PartDesign_Body/fr#Statut_actif.md) le corps auquel appliquer l\'évidement.
+2.  Sélectionnez une ou plusieurs faces du corps.
+3.  Il existe plusieurs façons de lancer l\'outil :
+    -   Appuyez sur le bouton **<img src="images/PartDesign_Thickness.svg" width=16px> [Évidement](PartDesign_Thickness/fr.md)**.
+    -   Sélectionnez l\'option **PartDesign → Appliquer une fonction d'habillage → <img src="images/PartDesign_Thickness.svg" width=16px> Évidement** du menu.
+4.  S\'il n\'y a pas de corps actif, et qu\'il y a deux corps ou plus dans le document, la fenêtre de dialogue **Corps actif requis** s\'ouvrira et vous invitera à en activer un. S\'il n\'y a qu\'un seul corps, il sera activé automatiquement.
+5.  Le [panneau des tâches](Task_panel/fr.md) des **Paramètres de l'évidement** s\'ouvre. Voir [Options](#Options.md) pour plus d\'informations.
+6.  Appuyez sur le bouton **OK** pour terminer.
+
+:   *Souvenez-vous* :
+    -   Puisqu\'il doit y avoir au moins une face pour la fonction, la dernière face restante dans la liste ne peut pas être retirée.
+
+
+
+### Modifier un évidement 
+
+1.  Effectuez l\'une des opérations suivantes :
+    -   Double-cliquez sur l\'objet Thickness dans la [vue en arborescence](Tree_view/fr.md).
+    -   Cliquez avec le bouton droit de la souris sur l\'objet Thickness dans la [vue en arborescence](Tree_view/fr.md) et sélectionnez **Modifier l'évidement** dans le menu contextuel.
+2.  Le [panneau des tâches](Task_panel/fr.md) des **Paramètres de l'évidement** s\'ouvre. Voir [Options](#Options.md) pour plus d\'informations.
+3.  Appuyez sur le bouton **OK** pour terminer.
+
+## Options
+
+-    **Ajouter une face**: ajoutez des faces à la sélection en appuyant sur le bouton **Ajouter une face** et en sélectionnant d\'autres faces.
+
+-    **Supprimer la face**: choisissez un moyen de supprimer des faces de la sélection :
+
+    -   Sélectionnez une ou plusieurs faces dans la liste et appuyez sur la touche **Suppr** ou cliquez droit sur la liste et sélectionnez **Enlever** dans le menu contextuel.
+    -   Appuyez sur le bouton **Supprimer la face**. Toutes les faces précédemment sélectionnées sont surlignées en violet. Sélectionnez chaque visage à supprimer.
+
+-   Cliquez sur **Épaisseur** : définissez l\'épaisseur de la paroi soit en éditant la valeur, soit en cliquant sur les flèches haut/bas.
+
+-    **Mode**:
+
+    -   
+        **Objet creux**
+        
+        : sélectionnez cette option pour obtenir un élément comme un vase, sans dessus mais avec le fond.. Seule cette option peut être sélectionnée.
+
+    -   
+        **Tube**
+        
+        : non implémenté. Voir [ce sujet du forum](https://forum.freecadweb.org/viewtopic.php?p=484495#p484495).
+
+    -   
+        **Recto-verso**
+        
+        : non implémenté. Voir [ce sujet du forum](https://forum.freecadweb.org/viewtopic.php?p=484495#p484495).
+
+-    **Type de raccordement**:
+
+    -   
+        **Arc**
+        
+        : lorsque des faces non tangentielles sont décalées, les nouvelles faces qui ne se croisent pas sont jointes par un congé dont le rayon est égal à l\'épaisseur définie.
+
+    -   
+        **Intersection**
+        
+        : lorsque des faces non tangentielles sont décalées, les nouvelles faces qui ne se croisent pas sont prolongées pour se rencontrer à leur intersection virtuelle.
+
+-    **Intersection**: lorsque cette option est cochée, les auto-intersections dans certains modèles sont évitées. Cette option n\'est pas recommandée car elle repose sur une [méthode incomplète d\'OpenCASCADE](https://dev.opencascade.org/doc/refman/html/class_b_rep_offset_a_p_i___make_thick_solid.html#af78f35025a31e2ce8bd96c82fb33a981).
+
+-    **Générer l'épaisseur vers l'intérieur**: lorsque cette case est cochée, les faces sont décalées vers l\'intérieur.
+
+
+
+## Remarques
+
+-   Si l\'évidement va vers l\'intérieur, la valeur doit être inférieure à la plus petite hauteur du corps.
+-   L\'outil peut échouer avec des formes complexes. Les outils [PartDesign Balayage additif](PartDesign_AdditivePipe/fr.md) ou [PartDesign Lissage additif](PartDesign_AdditiveLoft/fr.md) peuvent mieux fonctionner pour créer des formes complexes.
+-   Erreurs connues :
+    -   BRep_API : commande non effectuée.
+    -   BRep_Tool : aucun paramètre sur l\'arête.
+    -   Echec silencieux.
+
+
+
+## Propriétés
+
+Voir aussi : [Éditeur de propriétés](Property_editor/fr.md)
+
+Un objet PartDesign Thickness est dérivé d\'un [Part Feature](Part_Feature/fr.md) et hérite de toutes ses propriétés. Il possède également les propriétés supplémentaires suivantes :
+
+
+
+### Données
+
+
+{{Properties_Title|Base}}
+
+-    **Base|LinkSub**: sous-lien vers la liste des arêtes et des faces sélectionnées de l\'élément parent.
+
+-    **Support Transform|Bool**: inclut la forme additive/soustractive de base lorsqu\'elle est utilisée dans les caractéristiques de motif. S\'il est désactivé, seule la partie habillée de la forme est utilisée pour le modelage. Valeur par défaut : `False`.
+
+-    **Add Sub Shape|PartShape|hidden**
+    
+
+-    **Base Feature|Link|hidden**: lien vers l\'élément parent.
+
+-    **_ Body|LinkHidden|hidden**: lien vers le corps du parent.
+
+
+{{Properties_Title|Part Design}}
+
+-    **Refine|Bool**: affiner la forme (nettoyer les arêtes redondantes) après l\'ajout/soustraction. La valeur par défaut est déterminée par la préférence **Affiner automatiquement le modèle après une opération d'esquisse**. Voir [PartDesign Préférences](PartDesign_Preferences/fr#G.C3.A9n.C3.A9ral.md).
+
+
+{{Properties_Title|Thickness}}
+
+-    **Value|Length**: valeur de l\'épaisseur. Valeur par défaut : {{value|1 mm}}.
+
+-    **Mode|Enumeration**: mode. {{value|Skin}} (par défaut), {{value|Pipe}} ou {{Value|Recto verso}}. Seule {{value|Skin}} est implémentée.
+
+-    **Join|Enumeration**: type de raccordement. {{value|Arc}} (par défaut) ou {{Value|Intersection}}.
+
+-    **Reversed|Bool**: générer l\'épaisseur vers l\'intérieur du solide. Valeur par défaut : `False`.
+
+-    **Intersection|Bool**: activer la gestion de l\'intersection. Valeur par défaut : `False`.
+
+
+
+
+
+{{PartDesign Tools navi
+
+}}
+
+
+
+---
+⏵ [documentation index](../README.md) > [PartDesign](PartDesign_Workbench.md) > PartDesign Thickness/fr

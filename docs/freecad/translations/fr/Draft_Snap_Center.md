@@ -1,0 +1,59 @@
+---
+ GuiCommand:
+   Name: Draft Snap Center
+   Name/fr: Draft Aimantation Centre
+   MenuLocation: Aimantation , Aimanter au centre
+   Workbenches: Draft_Workbench/fr, BIM_Workbench/fr
+   SeeAlso: Draft_Snap/fr, Draft_Snap_Lock/fr
+---
+
+# Draft Snap Center/fr
+
+
+
+## Description
+
+L\'option <img alt="" src=images/Draft_Snap_Center.svg  style="width:24px;"> **Draft Aimantation Centre** permet de s\'aimanter au point central des faces et des arêtes circulaires et au point **Placement** de [Draft Proxy pour plan de travail](Draft_WorkingPlaneProxy/fr.md) et [Arch Partie de bâtiment](Arch_BuildingPart/fr.md). Les faces et les arêtes peuvent appartenir à des objets de [Draft](Draft_Workbench/fr.md) ou de [BIM](BIM_Workbench/fr.md) mais aussi à des objets créés avec d\'autres [ateliers](Workbenches/fr.md).
+
+![](images/Draft_Snap_Center_example_arc.png ) 
+*Aimantation du deuxième point d'une ligne au centre d'un bord circulaire*
+
+![](images/Draft_Snap_Center_example_buildingpart.png ) 
+*Aimantation du deuxième point d'une ligne au point Placement d'un Arch Partie de bâtiment*
+
+
+
+## Utilisation
+
+Pour des informations générales sur l\'aimantation voir [Draft Aimantation](Draft_Snap/fr.md).
+
+1.  Assurez-vous que l\'aimantation est activée. Voir <img alt="" src=images/Draft_Snap_Lock.svg  style="width:16px;">. [Draft Verrouillage de l\'aimantation](Draft_Snap_Lock/fr.md).
+2.  Si **Draft Aimantation Centre** n\'est pas actif, faites l\'une des choses suivantes :
+    -   Appuyez sur le bouton **<img src="images/Draft_Snap_Center.svg" width=16px> [Aimanter au centre](Draft_Snap_Center/fr.md)** de la barre d\'outils Draft Aimantation.
+    -   [Draft](Draft_Workbench/fr.md) : maintenez le bouton **<img src="images/Draft_Snap_Lock.svg" width=x16px><img src="images/Toolbar_flyout_arrow.svg" width=x16px>** dans le [Draft Widget d\'aimantation](Draft_snap_widget/fr.md) et dans le menu qui s\'ouvre, sélectionnez l\'option **<img src="images/Draft_Snap_Center.svg" width=16px> Aimanter au centre**.
+    -   [BIM](BIM_Workbench/fr.md) : sélectionnez l\'option **Aimantation → <img src="images/Draft_Snap_Center.svg" width=16px> Aimanter au centre** du menu ou dans le menu contextuel de la [vue 3D](3D_view/fr.md).
+3.  Choisissez une commande de Draft ou de BIM pour créer votre géométrie.
+4.  Notez que vous pouvez également modifier les options d\'aimantation lorsqu\'une commande est active.
+5.  Effectuez l\'une des opérations suivantes :
+    -   Pour sélectionner le point central d\'une face ou d\'une arête circulaire :
+        -   Déplacez le curseur sur la face ou l\'arête.
+        -   La face ou l\'arête est mise en surbrillance.
+    -   Pour sélectionner le point **Placement** d\'un [Draft Proxy pour plan de travail](Draft_WorkingPlaneProxy/fr.md) :
+        -   Déplacez le curseur sur n\'importe quel élément du proxy du plan de travail.
+        -   Le proxy du plan de travail n\'est pas mis en évidence.
+    -   Pour sélectionner le point **Placement** d\'une [Arch Partie de bâtiment](Arch_BuildingPart/fr.md) :
+        -   Déplacez le curseur sur l\'un des bords du petit symbole d\'axe de la Partie de bâtiment, ou sur le texte à côté qui affiche les **Label** de la Partie de bâtiment et son niveau.
+        -   Seuls les bords du symbole d\'axe sont mis en évidence. Le texte n\'est pas mis en évidence.
+6.  Si un point est trouvé, il est marqué et l\'icône <img alt="" src=images/Draft_Snap_Center.svg  style="width:16px;"> s\'affiche près du curseur.
+7.  Cliquez pour confirmer le point.
+
+
+
+## Préférences
+
+Voir [Draft Préférences](Draft_Snap/fr#Pr.C3.A9f.C3.A9rences.md)
+
+
+
+---
+⏵ [documentation index](../README.md) > [Draft](Draft_Workbench.md) > Draft Snap Center/fr

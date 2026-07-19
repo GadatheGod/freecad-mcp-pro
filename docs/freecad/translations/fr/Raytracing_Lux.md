@@ -1,0 +1,41 @@
+---
+ GuiCommand:
+   Name: Raytracing Lux
+   Name/fr: Raytracing Nouveau projet Luxrender
+   MenuLocation: Raytracing , Nouveau projet Luxrender
+‏‎   Workbenches: Raytracing_Workbench/fr
+   Shortcut: 
+   SeeAlso: 
+---
+
+# Raytracing Lux/fr
+
+## Description
+
+Insère un nouveau projet LuxRender dans le document.
+
+## Utilisation
+
+1.  Cliquez sur l\'icône \"déroulante\" noire après <img alt="" src=images/Raytracing_Lux.svg  style="width:32px;"> pour sélectionner l\'un des différents modèles prédéfinis.
+2.  Ou choisissez **Raytracing** → **Nouveau projet Luxrender** et l'un des modèles prédéfinis dans le menu supérieur.
+3.  Un nouveau projet LuxRender appelé \"LuxProject\" sera créé.
+
+## Limitations
+
+-   Le projet ne peut être créé qu\'à partir de modèles prédéfinis.
+-   Des configurations de projet supplémentaires nécessiteraient la définition de modèles supplémentaires.
+
+## Remarques
+
+
+
+
+
+{{Raytracing_Tools_navi
+
+}}
+
+
+
+---
+⏵ [documentation index](../README.md) > [Raytracing](Category_Raytracing.md) > Raytracing Lux/fr

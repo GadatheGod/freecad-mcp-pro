@@ -1,0 +1,42 @@
+---
+ GuiCommand:
+   Name: Std Print
+   Name/ru: Std Print
+   MenuLocation: Файл , Печать...
+   Workbenches: All
+   Shortcut: **Ctrl**+**P**
+   SeeAlso: Std_PrintPreview/ru, Std_PrintPdf/ru, Std_Export/ru, Std_ViewScreenShot/ru
+---
+
+# Std Print/ru
+
+
+
+## Описание
+
+The **Std Print** command is primarily intended to print [TechDraw Workbench](TechDraw_Workbench.md) pages, but can also be used to print what is currently visible in the [3D view](3D_View.md).
+
+
+
+## Применение
+
+1.  If required activate the correct TechDraw page or change the 3D view to your liking.
+2.  There are several ways to invoke the command:
+    -   Select the **File → <img src="images/Std_Print.svg" width=16px> Print...** option from the menu.
+    -   Use the keyboard shortcut: **Ctrl**+**P**.
+3.  The standard print dialog box will pop up.
+
+
+
+## Опции
+
+-   Нажмите **Esc** или кнопку **Отмена**, чтобы отменить выполнение команды.
+
+## Notes
+
+-   When printing the contents of the 3D view, one should not expect any particular scale factor in the output.
+
+
+
+---
+⏵ [documentation index](../README.md) > Std Print/ru

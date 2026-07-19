@@ -1,0 +1,14 @@
+# Category:Hubs/ru
+This category gathers the meeting points of the 3 broad categories of users of FreeCAD\...
+
+### Contents
+
+|     |     |     |
+| --- | --- | --- |
+| [Developer hub/ru](Developer_hub/ru.md) | [Power users hub/ru](Power_users_hub/ru.md) | [User hub/ru](User_hub/ru.md) |
+|
+
+
+
+---
+⏵ [documentation index](../README.md) > Category:Hubs/ru

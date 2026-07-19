@@ -1,10 +1,10 @@
 [project]
-name = "freecad-mcp"
+name = "freecad-mcp-pro"
 version = "0.1.19"
-description = "Add your description here"
+description = "FreeCAD MCP server for AI assistants - control FreeCAD via opencode, Claude Desktop, or any MCP client"
 readme = "README.md"
 authors = [
-    { name = "neka-nat", email = "nekanat.stock@gmail.com" }
+    { name = "GadatheGod", email = "praveen@gmail.com" }
 ]
 license = { text = "MIT" }
 requires-python = ">=3.12"
@@ -14,7 +14,7 @@ dependencies = [
 ]
 
 [project.scripts]
-freecad-mcp = "freecad_mcp.server:main"
+freecad-mcp-pro = "freecad_mcp.server:main"
 
 [tool.hatch.build.targets.sdist]
 exclude = ["assets", "results"]

@@ -1,0 +1,14 @@
+# Category:Glossary/es
+This category tracks pages that explain definitions of words related to FreeCAD
+
+### Contents
+
+|     |     |     |
+| --- | --- | --- |
+| [Command/es](Command/es.md) | [Glossary/es](Glossary/es.md) | [Python/es](Python/es.md) |
+| [Sketch/es](Sketch/es.md) |
+
+
+
+---
+⏵ [documentation index](../README.md) > Category:Glossary/es

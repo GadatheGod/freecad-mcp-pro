@@ -1,0 +1,7 @@
+# Creating a FeaturePython Box, Part II/en
+1.  REDIRECT [Create_a_FeaturePython_object_part_II/en](Create_a_FeaturePython_object_part_II/en.md)
+
+
+
+---
+⏵ [documentation index](../README.md) > Creating a FeaturePython Box, Part II/en

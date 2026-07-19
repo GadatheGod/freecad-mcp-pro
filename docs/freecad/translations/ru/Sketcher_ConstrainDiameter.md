@@ -1,0 +1,92 @@
+---
+ GuiCommand:
+   Name/ru: Ограничить диаметр
+   Name: Sketcher_ConstrainDiameter
+   MenuLocation: Sketch , Ограничения эскиза , Ограничить диаметр
+   Workbenches: Sketcher_Workbench/ru
+   SeeAlso: Sketcher_ConstrainDistance/ru, Sketcher_ConstrainDistanceX/ru, Sketcher_ConstrainDistanceY/ru
+   Version: 0.18
+---
+
+# Sketcher ConstrainDiameter/ru
+
+
+</div>
+
+
+
+## Описание
+
+The <img alt="" src=images/Sketcher_ConstrainDiameter.svg  style="width:24px;"> [Sketcher ConstrainDiameter](Sketcher_ConstrainDiameter.md) tool fixes the diameter of circles and arcs. It cannot be used for [B-spline weight circles](Sketcher_CreateBSpline#Notes.md).
+
+
+
+
+<div class="mw-translate-fuzzy">
+
+## Применение
+
+
+</div>
+
+See also: [Drawing aids](Sketcher_Workbench#Drawing_aids.md).
+
+### [Continue mode](Sketcher_Workbench#Continue_modes.md) 
+
+1.  Make sure there is no selection.
+2.  There are several ways to invoke the tool:
+    -   
+        <small>(v1.0)</small> 
+        
+        : If the **Dimensioning constraints** [preference](Sketcher_Preferences#General.md) is set to {{Value|Single tool}} (default): press the down arrow to the right of the **<img src="images/Sketcher_Dimension.svg" width=|x16px><img src="images/Toolbar_flyout_arrow.svg" width=x16px>** button and select the **<img src="images/Sketcher_ConstrainDiameter.svg" width=16px> Constrain diameter** option from the dropdown.
+
+    -   If this preference has a different value (and in {{VersionMinus|0.21}}): press the **<img src="images/Sketcher_ConstrainDiameter.svg" width=16px> [Constrain diameter](Sketcher_ConstrainDiameter.md)** button.
+
+    -   Select the **Sketch → Sketcher constraints → <img src="images/Sketcher_ConstrainDiameter.svg" width=16px> Constrain diameter** option from the menu.
+
+    -   
+        <small>(v1.0)</small> 
+        
+        : Right-click in the [3D view](3D_view.md) and select the **Dimension → <img src="images/Sketcher_ConstrainDiameter.svg" width=16px> Constrain diameter** option from the context menu.
+
+    -   Use the keyboard shortcut: **K** then **O**.
+3.  The cursor changes to a cross with the tool icon.
+4.  Select the edge of a circle or arc.
+5.  If a [driving dimensional constraint](Sketcher_ToggleDrivingConstraint.md) is created, depending on the [preferences](Sketcher_Preferences#Display.md), a dialog opens to [edit its value](Sketcher_Workbench#Edit_constraints.md).
+6.  A constraint is added.
+7.  Optionally keep creating constraints.
+8.  To finish, right-click or press **Esc**, or start another geometry or constraint creation tool.
+
+### Run-once mode 
+
+1.  Select the edge of one or more circles or arcs.
+2.  Invoke the tool as explained above.
+3.  Optionally [edit the constraint value](Sketcher_Workbench#Edit_constraints.md).
+4.  Depending on the selection one or more constraints are added, see [Notes](#Notes.md).
+
+## Notes
+
+-   If [driving constraints](Sketcher_ToggleDrivingConstraint.md) are created and multiple elements that are not [external geometry](Sketcher_External.md) have been pre-selected, only the first of those receives a dimensional constraint, while between the first and the others [Equal constrains](Sketcher_ConstrainEqual.md) are applied.
+
+
+
+## Программирование
+
+
+```pythonSketch.addConstraint(Sketcher.Constraint('Diameter', ArcOrCircle, App.Units.Quantity('123.0 mm')))```
+
+The [Sketcher scripting](Sketcher_scripting.md) page explains the values which can be used for `ArcOrCircle`, and contains further examples on how to create constraints from Python scripts.
+
+
+<div class="mw-translate-fuzzy">
+
+
+
+
+
+</div>
+
+
+
+---
+⏵ [documentation index](../README.md) > [Sketcher](Sketcher_Workbench.md) > Sketcher ConstrainDiameter/ru

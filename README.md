@@ -1,125 +1,59 @@
-[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/neka-nat-freecad-mcp-badge.png)](https://mseep.ai/app/neka-nat-freecad-mcp)
-
 # FreeCAD MCP
 
-This repository is a FreeCAD MCP that allows you to control FreeCAD from Claude Desktop.
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/neka-nat-freecad-mcp-pro-badge.png)](https://mseep.ai/app/neka-nat-freecad-mcp-pro)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![FreeCAD](https://img.shields.io/badge/FreeCAD-1.1+-blue.svg)](https://freecad.org/)
+[![Python](https://img.shields.io/badge/Python-3.12+-green.svg)](https://www.python.org/)
 
-## Demo
+A Model Context Protocol (MCP) server that enables AI assistants (Claude Desktop, opencode, etc.) to control FreeCAD — a parametric 3D CAD modeler.
 
-### Design a flange
+Create 3D parts, run FEM analysis, generate drawings, and more — all through natural language.
 
-![demo](./assets/freecad_mcp4.gif)
+## ✨ Features
 
-### Design a toy car
+- **3D Modeling**: Create boxes, cylinders, spheres, cones, torus, and more
+- **FEM Analysis**: Run CalculiX solver for stress/displacement analysis
+- **Screenshot Capture**: Get view screenshots from any angle
+- **Parts Library**: Insert pre-made parts from FreeCAD library
+- **Custom Python**: Execute arbitrary Python code in FreeCAD
+- **Remote Connections**: Control FreeCAD from another machine
 
-![demo](./assets/make_toycar4.gif)
+## 📦 Installation
 
-### Design a part from 2D drawing
-
-#### Input 2D drawing
-
-![input](./assets/b9-1.png)
-
-#### Demo
-
-![demo](./assets/from_2ddrawing.gif)
-
-This is the conversation history.
-https://claude.ai/share/7b48fd60-68ba-46fb-bb21-2fbb17399b48
-
-## Install addon
-
-FreeCAD Addon directory is
-* Windows: `%APPDATA%\FreeCAD\Mod\`
-* Mac:
-  * FreeCAD 1.1: `~/Library/Application\ Support/FreeCAD/v1-1/Mod/`
-  * FreeCAD 1.0: `~/Library/Application\ Support/FreeCAD/v1-0/Mod/`
-* Linux:
-  * Ubuntu: `~/.FreeCAD/Mod/` or `~/snap/freecad/common/Mod/` (if you install FreeCAD from snap)
-  * Debian: `~/.local/share/FreeCAD/Mod`
-  * Arch / CachyOS (FreeCAD 1.1 from `extra/freecad`): `~/.local/share/FreeCAD/v1-1/Mod/`
-
-Please put `addon/FreeCADMCP` directory to the addon directory.
+### 1. Install FreeCAD
 
 ```bash
-git clone https://github.com/neka-nat/freecad-mcp.git
-cd freecad-mcp
+# Ubuntu/Debian (via Flatpak - recommended)
+flatpak install flathub org.freecad.FreeCAD -y
 
-# For Linux (Ubuntu/Debian)
-cp -r addon/FreeCADMCP ~/.FreeCAD/Mod/
-
-# For Linux (Arch/CachyOS, FreeCAD 1.1 from extra/freecad)
-mkdir -p ~/.local/share/FreeCAD/v1-1/Mod/
-cp -r addon/FreeCADMCP ~/.local/share/FreeCAD/v1-1/Mod/
-
-# For macOS (FreeCAD 1.1)
-cp -r addon/FreeCADMCP ~/Library/Application\ Support/FreeCAD/v1-1/Mod/
+# Or download from https://freecad.org/download/
 ```
 
-When you install addon, you need to restart FreeCAD.
-You can select "MCP Addon" from Workbench list and use it.
-
-![workbench_list](./assets/workbench_list.png)
-
-And you can start RPC server by "Start RPC Server" command in "FreeCAD MCP" toolbar.
-
-![start_rpc_server](./assets/start_rpc_server.png)
-
-### Auto-Start RPC Server
-
-By default, the RPC server must be started manually each time FreeCAD opens. To start it automatically:
-
-1. Open the **FreeCAD MCP** menu (switch to the MCP Addon workbench first)
-2. Check **Auto-Start Server**
-
-The setting is saved to `freecad_mcp_settings.json` and persists across sessions. On the next FreeCAD launch, the RPC server will start automatically once the application finishes loading.
-
-You can disable it at any time by unchecking **Auto-Start Server** in the same menu.
-
-## Setting up Claude Desktop
-
-Pre-installation of the [uvx](https://docs.astral.sh/uv/guides/tools/) is required.
-
-And you need to edit Claude Desktop config file, `claude_desktop_config.json`.
-
-For user.
-
-```json
-{
-  "mcpServers": {
-    "freecad": {
-      "command": "uvx",
-      "args": [
-        "freecad-mcp"
-      ]
-    }
-  }
-}
-```
-
-If you want to save token, you can set `only_text_feedback` to `true` and use only text feedback.
-
-```json
-{
-  "mcpServers": {
-    "freecad": {
-      "command": "uvx",
-      "args": [
-        "freecad-mcp",
-        "--only-text-feedback"
-      ]
-    }
-  }
-}
-```
-
-
-For developer.
-First, you need clone this repository.
+### 2. Install FreeCAD Addon
 
 ```bash
-git clone https://github.com/neka-nat/freecad-mcp.git
+git clone https://github.com/GadatheGod/freecad-mcp-pro
+cd freecad-mcp-pro
+
+# Copy addon to FreeCAD Mod directory
+cp -r addon/FreeCADMCP ~/.var/app/org.freecad.FreeCAD/config/FreeCAD/Mod/
+
+# Restart FreeCAD
 ```
+
+### 3. Install MCP Server
+
+```bash
+# Using uv (recommended)
+uv sync
+
+# Or using pip
+pip install -e .
+```
+
+### 4. Configure Claude Desktop
+
+Edit `~/.config/claude/claude_desktop_config.json`:
 
 ```json
 {
@@ -128,70 +62,152 @@ git clone https://github.com/neka-nat/freecad-mcp.git
       "command": "uv",
       "args": [
         "--directory",
-        "/path/to/freecad-mcp/",
+        "/path/to/freecad-mcp-pro",
         "run",
-        "freecad-mcp"
+        "freecad-mcp-pro"
       ]
     }
   }
 }
 ```
 
-## Remote Connections
+## 🚀 Usage
 
-By default the RPC server does not accept remote connections and listens on `localhost`. To control FreeCAD from another machine on your network:
+### Start FreeCAD RPC Server
 
-### 1. Enable remote connections in FreeCAD
+1. Open FreeCAD
+2. Switch to **MCP Addon** workbench
+3. Click **Start RPC Server** in the toolbar
 
-In the **FreeCAD MCP** toolbar:
+### Available Tools
 
-1. Check **Remote Connections** — the RPC server will bind to `0.0.0.0` (all interfaces) on the next restart. For security reasons, it only accepts connections from the IP addresses or CIDR subnets specified in the **Allowed IPs** field. By default this is `127.0.0.1`.
-2. Click **Configure Allowed IPs** and enter a comma-separated list of IP addresses or CIDR subnets that are allowed to connect, e.g.:
+| Tool | Description |
+|------|-------------|
+| `create_document` | Create a new FreeCAD document |
+| `create_object` | Create 3D objects (boxes, cylinders, etc.) |
+| `edit_object` | Modify object properties |
+| `delete_object` | Delete an object |
+| `execute_code` | Run Python code in FreeCAD |
+| `get_view` | Get screenshots from any view |
+| `get_objects` | List all objects in a document |
+| `get_object` | Get details of a specific object |
+| `run_fem_analysis` | Run FEM stress analysis |
+| `insert_part_from_library` | Insert parts from FreeCAD library |
 
-   ```
-   192.168.1.100, 10.0.0.0/24
-   ```
-
-   `127.0.0.1` is always the default. Invalid entries are rejected with an error dialog. Restart the RPC server after changing these settings.
-
-### 2. Point the MCP server at the remote host
-
-Pass the `--host` flag with the IP address or hostname of the machine running FreeCAD:
+### Example: Create a Box
 
 ```json
 {
-  "mcpServers": {
-    "freecad": {
-      "command": "uvx",
-      "args": [
-        "freecad-mcp",
-        "--host", "192.168.1.100"
-      ]
-    }
+  "doc_name": "MyPart",
+  "obj_name": "BaseBox",
+  "obj_type": "Part::Box",
+  "obj_properties": {
+    "Length": 50,
+    "Width": 30,
+    "Height": 20,
+    "ViewObject": {"ShapeColor": [0.8, 0.2, 0.2, 1.0]}
   }
 }
 ```
 
-The `--host` value is validated on startup — it must be a valid IPv4/IPv6 address or hostname.
+## 🛠️ Skills
 
-## Tools
+This repository includes skills for working with FreeCAD via opencode:
 
-* `create_document`: Create a new document in FreeCAD.
-* `create_object`: Create a new object in FreeCAD.
-* `edit_object`: Edit an object in FreeCAD.
-* `delete_object`: Delete an object in FreeCAD.
-* `execute_code`: Execute arbitrary Python code in FreeCAD.
-* `insert_part_from_library`: Insert a part from the [parts library](https://github.com/FreeCAD/FreeCAD-library).
-* `get_view`: Get a screenshot of the active view.
-* `get_objects`: Get all objects in a document.
-* `get_object`: Get an object in a document.
-* `get_parts_list`: Get the list of parts in the [parts library](https://github.com/FreeCAD/FreeCAD-library).
-* `run_fem_analysis`: Run the CalculiX solver on an existing `Fem::FemAnalysis` and return summary results (max von Mises stress, max displacement, node count, working directory). Auto-creates a `SolverCcxTools` if the analysis has none. See [`examples/cantilever_fem.py`](examples/cantilever_fem.py) for an end-to-end usage example.
+### Core Skills
+- **freecad** - General FreeCAD MCP usage and workflows
+- **freecad-objects** - Quick reference for Part::Box, Part::Cylinder, etc.
 
-## Contributors
+### Matt Pocock Skills (FreeCAD-tailored)
+- **f-grill-with-docs** - Interview to sharpen FreeCAD design plans, creates ADRs
+- **f-to-spec** - Convert conversation into FreeCAD design spec
+- **f-to-tickets** - Break design into FreeCAD implementation tickets
+- **f-implement** - Create FreeCAD geometry/analysis based on tickets
+- **f-code-review** - Review FreeCAD changes against standards and spec
 
-<a href="https://github.com/neka-nat/freecad-mcp/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=neka-nat/freecad-mcp" />
-</a>
+## 📚 Documentation
 
-Made with [contrib.rocks](https://contrib.rocks).
+- **FreeCAD Wiki**: 2,632 markdown files in `docs/freecad/`
+- **Source**: Converted from [FreeCAD-documentation](https://github.com/FreeCAD/FreeCAD-documentation)
+- **Addon Docs**: See `addon/FreeCADMCP/` for RPC server details
+
+## 🏗️ Architecture
+
+```
+┌─────────────┐     ┌──────────────┐     ┌─────────────┐
+│  AI Client  │────▶│  MCP Server  │────▶│  FreeCAD    │
+│ (Claude,    │     │ (freecad-mcp-pro)│     │  (RPC)      │
+│  opencode)  │     │              │     │             │
+└─────────────┘     └──────────────┘     └─────────────┘
+```
+
+## 📄 License
+
+MIT License. See [LICENSE](LICENSE) for details.
+
+**Copyright (c) 2025 Praveen**
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+## 🙏 Acknowledgments
+
+### Original FreeCAD MCP
+- **Author**: Shirokuma (k tanaka) / [@neka-nat](https://github.com/neka-nat)
+- **Source**: [freecad-mcp-pro](https://github.com/neka-nat/freecad-mcp-pro)
+- **License**: MIT
+
+### FreeCAD Documentation
+- **Source**: [FreeCAD-documentation](https://github.com/FreeCAD/FreeCAD-documentation)
+- **Author**: FreeCAD Community
+- **License**: BSD-3-Clause
+- **Description**: Automatic markdown-based conversion of the FreeCAD wiki
+
+### FreeCAD
+- **Website**: https://freecad.org
+- **License**: LGPL-2.1-or-later
+- **Description**: Open source parametric 3D CAD modeler
+
+### Matt Pocock Skills
+- **Source**: [Matt Pocock Engineering Skills](https://github.com/mattpocock)
+- **Skills adapted**: grill-with-docs, to-spec, to-tickets, implement, code-review
+
+### Tools Used
+- **[uv](https://github.com/astral-sh/uv)** - Python package manager
+- **[MCP](https://github.com/modelcontextprotocol)** - Model Context Protocol
+- **[FreeCAD](https://freecad.org)** - Parametric 3D CAD modeler
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📞 Support
+
+- FreeCAD Wiki: https://wiki.freecad.org
+- FreeCAD Forum: https://forum.freecad.org
+- Issues: [GitHub Issues](https://github.com/GadatheGod/freecad-mcp-pro/issues)
+
+## 📊 Stats
+
+[![Contributors](https://img.shields.io/github/contributors/GadatheGod/freecad-mcp-pro)](https://github.com/GadatheGod/freecad-mcp-pro/graphs/contributors)
+[![Stars](https://img.shields.io/github/stars/GadatheGod/freecad-mcp-pro)](https://github.com/GadatheGod/freecad-mcp-pro/stargazers)
+[![Forks](https://img.shields.io/github/forks/GadatheGod/freecad-mcp-pro)](https://github.com/GadatheGod/freecad-mcp-pro/network/members)

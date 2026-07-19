@@ -1,0 +1,47 @@
+---
+ GuiCommand:
+   Name: TechDraw ExtensionCreateVertCoordDimension
+   MenuLocation: TechDraw , Extensions: Dimensions , Create Vertical Coordinate Dimensions
+   Workbenches: TechDraw_Workbench
+   Shortcut: 
+   Version: 0.20
+   SeeAlso: TechDraw_ExtensionCreateHorizCoordDimension, TechDraw_ExtensionCreateObliqueCoordDimension
+---
+
+# TechDraw ExtensionCreateVertCoordDimension/en
+
+## Description
+
+The **TechDraw ExtensionCreateVertCoordDimension** tool creates vertical coordinate dimensions: multiple evenly spaced dimensions starting from the same baseline.
+
+<img alt="" src=images/TechDraw_ExtensionCreateVertCoordDimensionExample.png  style="width:400px;"> 
+*On the right the created dimensions*
+
+## Usage
+
+1.  Optionally specify the cascade spacing with the <img alt="" src=images/TechDraw_ExtensionSelectLineAttributes.svg  style="width:16px;"> [TechDraw ExtensionSelectLineAttributes](TechDraw_ExtensionSelectLineAttributes.md) tool.
+2.  Select three or more vertexes.
+3.  The selection order of the first two vertexes determines the position of the baseline. If the vertex that is selected first is below the second, the baseline is created at the lowest vertex, else it is created at the highest vertex.
+4.  There are several ways to invoke the tool:
+    -   
+        <small>(v1.0)</small> 
+        
+        : If the **Dimensioning tools** [preference](TechDraw_Preferences#Dimensions.md) is set to {{Value|Single tool}} (default): press the down arrow to the right of the **<img src="images/TechDraw_Dimension.svg" width=|x16px><img src="images/Toolbar_flyout_arrow.svg" width=x16px>** button and select the **<img src="images/TechDraw_ExtensionCreateVertCoordDimension.svg" width=16px> Create Vertical Coordinate Dimensions** option from the dropdown.
+
+    -   If this preference has a different value (and in {{VersionMinus|0.21}}): press the **<img src="images/TechDraw_ExtensionCreateVertCoordDimension.svg" width=16px> [Create Vertical Coordinate Dimensions](TechDraw_ExtensionCreateVertCoordDimension.md)** button.
+
+    -   Select the **TechDraw → Extensions: Dimensions → <img src="images/TechDraw_ExtensionCreateVertCoordDimension.svg" width=16px> Create Vertical Coordinate Dimensions** option from the menu.
+5.  Coordinate dimensions with centered dimension texts are created.
+
+
+
+
+
+{{TechDraw_Tools_navi
+
+}}
+
+
+
+---
+⏵ [documentation index](../README.md) > [TechDraw](TechDraw_Workbench.md) > TechDraw ExtensionCreateVertCoordDimension/en

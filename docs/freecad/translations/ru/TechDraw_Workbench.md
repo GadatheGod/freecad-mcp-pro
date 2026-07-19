@@ -1,0 +1,749 @@
+# TechDraw Workbench/ru
+<div class="mw-translate-fuzzy">
+
+
+
+
+
+</div>
+
+<img alt="Логотип верстака TechDraw" src=images/Workbench_TechDraw.svg  style="width:128px;">
+
+
+
+## Введение
+
+
+<div class="mw-translate-fuzzy">
+
+Верстак [TechDraw](TechDraw_Workbench/ru.md) предназначен для построения технических чертежей на основе 3D-моделей созданных с помощью таких верстаков, как: [Part](Part_Workbench/ru.md), [PartDesign](PartDesign_Workbench/ru.md), [Arch](Arch_Workbench.md). 3D модели импортированные из других приложений, так же могут быть применены для построения чертежа. Каждый чертеж представляет собой лист, который может содержать различные виды отображаемых объектов, таких как: Part::Features, PartDesign::Bodies, App::Part groups и группы объектов документа. Полученные листы можно использовать в качестве документации, инструкции по эксплуатации, перечня элементов, спецификации и т. д.
+
+
+</div>
+
+В чертеж могут быть добавлены такие элементы как: размеры, сечения 3D Вида, дополнительные заштрихованные области, надписи и примечания, чертежные знаки в формате [SVG](SVG/ru.md). Чертеж так же можно экспортировать в различные форматы, такие как [DXF](DXF/ru.md), [SVG](SVG/ru.md) или [PDF](PDF/ru.md).
+
+Если вашей основной целью является создание сложных 2D чертежей и файлов в формате [DXF](DXF/ru.md), и вам не нужно 3D-моделирование, возможно FreeCAD будет не самым лучшим выбором для вас. Вы можете использовать специальное программное обеспечение для построения технических чертежей, такое как [LibreCAD](https://en.wikipedia.org/wiki/LibreCAD) или [QCad](https://en.wikipedia.org/wiki/QCad).
+
+
+
+
+<img alt="" src=images/TechDraw_Workbench_Example_ru-ru.png  style="width:425px;">
+
+## Snapping
+
+
+<small>(v1.0)</small> 
+
+: The TechDraw Workbench has a snapping feature. It can be used to automatically align views, section views and dimensions when positioning them by dragging with the mouse. With **Snap View Alignment** enabled (default) in the [preferences](TechDraw_Preferences#Snapping.md), views will snap to alignment with other views when close enough (**View Snapping Factor** setting). Dimensions are also snapped to other parallel dimensions and the dimension text can be snapped to the middle of the dimension line. Snapping can be temporarily disabled by holding down the **Alt** key.
+
+## Tools
+
+
+
+
+<div class="mw-translate-fuzzy">
+
+## Страницы
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_PageDefault.svg  style="width:32px;"> [Вставить страницу по умолчанию](TechDraw_PageDefault/ru.md): добавляет новую страницу используя [шаблон](TechDraw_Templates/ru.md) по умолчанию.
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_PageTemplate.svg  style="width:32px;"> [Вставить страницу используя шаблон](TechDraw_PageTemplate/ru.md): добавляет новую страницу, используя выбранный [шаблон](TechDraw_Templates/ru.md).
+
+
+</div>
+
+-   <img alt="" src=images/TechDraw_FillTemplateFields.svg  style="width:32px;"> [Update template fields](TechDraw_FillTemplateFields.md): <small>(v1.0)</small> 
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_RedrawPage.svg  style="width:32px;"> [Перерисовать страницу](TechDraw_RedrawPage/ru.md): принудительно обновляет выбранные листы. {{Version/ru|0.19}}
+
+
+</div>
+
+-   <img alt="" src=images/TechDraw_PrintAll.svg  style="width:32px;"> [Print All Pages](TechDraw_PrintAll.md): prints all pages in a document. <small>(v0.21)</small> 
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_ExportPageSVG.svg  style="width:32px;"> [Экспорт страницы в SVG](TechDraw_ExportPageSVG/ru.md): Экспорт страницы в [SVG](SVG/ru.md) файл.
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_ExportPageDXF.svg  style="width:32px;"> [Экспорт страницы в DXF](TechDraw_ExportPageDXF/ru.md): Экспорт страницы в [DXF](DXF/ru.md) файл.
+
+
+</div>
+
+
+
+
+<div class="mw-translate-fuzzy">
+
+## Виды
+
+
+</div>
+
+#### TechDraw views 
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_View.svg  style="width:32px;"> [Новый Вид](TechDraw_View/ru.md): добавляет 2D проекционный вид объекта.
+
+
+</div>
+
+-   <img alt="" src=images/TechDraw_BrokenView.svg  style="width:32px;"> [Insert Broken View](TechDraw_BrokenView.md): adds a broken view of one or more objects. <small>(v1.0)</small> 
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_SectionView.svg  style="width:32px;"> [Вставить Вид сечения](TechDraw_SectionView/ru.md): добавляет вид поперечного сечения в существующий вида.
+
+
+</div>
+
+-   <img alt="" src=images/TechDraw_ComplexSection.svg  style="width:32px;"> [Insert Complex Section View](TechDraw_ComplexSection.md): inserts a cross-section view of an existing view based on a profile. <small>(v0.21)</small> 
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_DetailView.svg  style="width:32px;"> [Вставить подробный Вид](TechDraw_DetailView/ru.md): добавляет подробный вид части существующего вида.
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_ProjectionGroup.svg  style="width:32px;"> [Вставить группу проекций](TechDraw_ProjectionGroup/ru.md): вызывает диалоговое окно для создания множества видов объекта с нескольких направлений.
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_ClipGroup.svg  style="width:32px;"> [Создать группу Видов](TechDraw_ClipGroup/ru.md): Вставляет группу Видов.
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_Symbol.svg  style="width:32px;"> [Вставить SVG Символ](TechDraw_Symbol/ru.md): Вставляет на страницу Символ из [SVG](SVG/ru.md) файла.
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_Image.svg  style="width:32px;"> [Вставить растровое изображение](TechDraw_Image/ru.md): вставляет на страницу рисунок в формате [bitmap](bitmap/ru.md) PNG или JPG.
+
+
+</div>
+
+-   <img alt="" src=images/TechDraw_ShareView.svg  style="width:32px;"> [Share View](TechDraw_ShareView.md): shares a view between multiple pages.
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_ToggleFrame.svg  style="width:32px;"> [Вкл/выкл отображение рамки](TechDraw_ToggleFrame/ru.md): включает и выключает рамки и метки, окружающие Вид.
+
+
+</div>
+
+-   <img alt="" src=images/TechDraw_ProjectShape.svg  style="width:32px;"> [Project Shape](TechDraw_ProjectShape.md): creates projections of shapes in the [3D view](3D_view.md).
+
+#### Views from other workbenches 
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_ActiveView.svg  style="width:32px;"> [Вставить активный вид (3D Вид)](TechDraw_ActiveView/ru.md): вставляет в чертеж Вид, активного 3D вида. {{Version/ru|0.19}}
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_DraftView.svg  style="width:32px;"> [Вставить Вид верстака Draft](TechDraw_DraftView/ru.md): добавляет Вид объекта из верстака [Draft](Draft_Workbench/ru.md).
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_ArchView.svg  style="width:32px;"> [Вставить Вид верстака Arch](TechDraw_ArchView/ru.md): добавляет Вид объекта из верстака [Arch](Arch_Workbench/ru.md) или вид [Секущей Плоскости](Arch_SectionPlane/ru.md).
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_SpreadsheetView.svg  style="width:32px;"> [Вставить электронную таблицу](TechDraw_SpreadsheetView/ru.md): добавляет таблицу из верстака [Spreadsheet](Spreadsheet_Workbench/ru.md).
+
+
+</div>
+
+### Stacking
+
+These are tools for changing the stacking order which controls the apparent depth of views on a page.
+
+-   <img alt="" src=images/TechDraw_StackTop.svg  style="width:" height="32px;"><img alt="" src=images/Toolbar_flyout_arrow_blue_background.svg  style="width:" height="32px;"> Adjust Stacking Order:
+
+  - <img alt="" src=images/TechDraw_StackTop.svg  style="width:32px;"> [Move view to top of stack](TechDraw_StackTop.md): moves views to the top of the stacking order. <small>(v0.21)</small> 
+
+  - <img alt="" src=images/TechDraw_StackBottom.svg  style="width:32px;"> [Move view to bottom of stack](TechDraw_StackBottom.md): moves views to the bottom of the stacking order. <small>(v0.21)</small> 
+
+  - <img alt="" src=images/TechDraw_StackUp.svg  style="width:32px;"> [Move view up one level](TechDraw_StackUp.md): moves views up one level in the stacking order. <small>(v0.21)</small> 
+
+  - <img alt="" src=images/TechDraw_StackDown.svg  style="width:32px;"> [Move view down one level](TechDraw_StackDown.md): moves views down one level in the stacking order. <small>(v0.21)</small> 
+
+
+
+
+<div class="mw-translate-fuzzy">
+
+## Размеры
+
+
+</div>
+
+-   <img alt="" src=images/TechDraw_Dimension.svg  style="width:" height="32px;"><img alt="" src=images/Toolbar_flyout_arrow_blue_background.svg  style="width:" height="32px;"> Dimensions:
+
+  - <img alt="" src=images/TechDraw_Dimension.svg  style="width:32px;"> [Insert Dimension](TechDraw_Dimension.md): adds a contextual dimension. <small>(v1.0)</small> 
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_LengthDimension.svg  style="width:32px;"> [Указать длинну](TechDraw_LengthDimension/ru.md): задает произвольное расстояние.
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_HorizontalDimension.svg  style="width:32px;"> [Указать горизонтальный размер](TechDraw_HorizontalDimension/ru.md): задает размер по горизонтали.
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_VerticalDimension.svg  style="width:32px;"> [Указать вертикальный размер](TechDraw_VerticalDimension/ru.md): задает размер по вертикали.
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_RadiusDimension.svg  style="width:32px;"> [Указать радиус](TechDraw_RadiusDimension/ru.md): задает радиус окружности или дуги.
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_DiameterDimension.svg  style="width:32px;"> [Указать диаметр](TechDraw_DiameterDimension/ru.md): задает диаметр окружности или дуги.
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_AngleDimension.svg  style="width:32px;"> [Указать угловой размер](TechDraw_AngleDimension/ru.md): задает величину угла между двумя прямыми краями.
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_3PtAngleDimension.svg  style="width:32px;"> [Указать угловой размер по 3 точкам](TechDraw_3PtAngleDimension/ru.md): задает величину угла, используя три вершины.
+
+
+</div>
+
+  - <img alt="" src=images/TechDraw_AreaDimension.svg  style="width:32px;"> [Insert Area Annotation](TechDraw_AreaDimension.md): adds an area dimension to a face. <small>(v1.0)</small> 
+
+  - <img alt="" src=images/TechDraw_ExtensionCreateLengthArc.svg  style="width:32px;"> [Create Arc Length Dimension](TechDraw_ExtensionCreateLengthArc.md): creates an arc length dimension.
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_HorizontalExtentDimension.svg  style="width:32px;"> [Указать горизонтальный габаритный размер](TechDraw_HorizontalExtentDimension/ru.md): добавляет габаритный размер по горизонтали. {{Version/ru|0.19}}
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_VerticalExtentDimension.svg  style="width:32px;"> [Указать вертикальный габаритный размер](TechDraw_VerticalExtentDimension/ru.md): добавляет габаритный размер по вертикали. {{Version/ru|0.19}}
+
+
+</div>
+
+  - <img alt="" src=images/TechDraw_ExtensionCreateHorizChainDimension.svg  style="width:32px;"> [Create Horizontal Chain Dimensions](TechDraw_ExtensionCreateHorizChainDimension.md): creates a sequence of aligned horizontal dimensions.
+
+  - <img alt="" src=images/TechDraw_ExtensionCreateVertChainDimension.svg  style="width:32px;"> [Create Vertical Chain Dimensions](TechDraw_ExtensionCreateVertChainDimension.md): creates a sequence of aligned vertical dimensions.
+
+  - <img alt="" src=images/TechDraw_ExtensionCreateObliqueChainDimension.svg  style="width:32px;"> [Create Oblique Chain Dimensions](TechDraw_ExtensionCreateObliqueChainDimension.md): creates a sequence of aligned oblique dimensions.
+
+  - <img alt="" src=images/TechDraw_ExtensionCreateHorizCoordDimension.svg  style="width:32px;"> [Create Horizontal Coordinate Dimensions](TechDraw_ExtensionCreateHorizCoordDimension.md): creates multiple evenly spaced horizontal dimensions starting from the same baseline.
+
+  - <img alt="" src=images/TechDraw_ExtensionCreateVertCoordDimension.svg  style="width:32px;"> [Create Vertical Coordinate Dimensions](TechDraw_ExtensionCreateVertCoordDimension.md): creates multiple evenly spaced vertical dimensions starting from the same baseline.
+
+  - <img alt="" src=images/TechDraw_ExtensionCreateObliqueCoordDimension.svg  style="width:32px;"> [Create Oblique Coordinate Dimensions](TechDraw_ExtensionCreateObliqueCoordDimension.md): creates multiple evenly spaced oblique dimensions starting from the same baseline.
+
+  - <img alt="" src=images/TechDraw_ExtensionCreateHorizChamferDimension.svg  style="width:32px;"> [Create Horizontal Chamfer Dimension](TechDraw_ExtensionCreateHorizChamferDimension.md): creates a horizontal size and angle dimension for a chamfer.
+
+  - <img alt="" src=images/TechDraw_ExtensionCreateVertChamferDimension.svg  style="width:32px;"> [Create Vertical Chamfer Dimension](TechDraw_ExtensionCreateVertChamferDimension.md): creates a vertical size and angle dimension for a chamfer.
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_Balloon.svg  style="width:32px;"> [Вставить примечание в выноску](TechDraw_Balloon/ru.md): создает аннотацию на странице. {{Version/ru|0.19}}
+
+
+</div>
+
+-   <img alt="" src=images/TechDraw_AxoLengthDimension.svg  style="width:32px;"> [Insert Axonometric Length Dimension](TechDraw_AxoLengthDimension.md): adds an axonometric length dimension. <small>(v0.21)</small> 
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_LandmarkDimension.svg  style="width:32px;"> [Вставить размер знака](TechDraw_LandmarkDimension/ru.md): добавляет размер указывающий расстояние до landmark. {{Version/ru|0.19}}
+
+
+</div>
+
+-   <img alt="" src=images/TechDraw_DimensionRepair.svg  style="width:32px;"> [Dimension Repair](TechDraw_DimensionRepair.md): can adjust the 2D or 3D geometry references of a dimension. <small>(v0.21)</small> 
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_LinkDimension.svg  style="width:32px;"> [Связать размер с 3D геометрией](TechDraw_LinkDimension/ru.md): связывает существующий размер с трехмерной геометрией.
+
+
+</div>
+
+### Hatching
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_Hatch.svg  style="width:32px;"> [Заштриховать грань, используя файл изображения](TechDraw_Hatch/ru.md): Штриховать грань, используя файл изображения.
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_GeometricHatch.svg  style="width:32px;"> [Применить геометрическую штриховку к грани](TechDraw_GeometricHatch/ru.md): Применяет шаблон штриховки к участку, используя спецификацию Autodesk PAT.
+
+
+</div>
+
+
+
+
+<div class="mw-translate-fuzzy">
+
+## Вспомогательные инструменты 
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_Annotation.svg  style="width:32px;"> [Добавить Аннотацию](TechDraw_Annotation/ru.md): добавляет простой текстовый блок в качестве аннотации.
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_LeaderLine.svg  style="width:32px;"> [Добавить линию-выноску в Вид](TechDraw_LeaderLine/ru.md): добавляет линию-выноску к Виду. {{Version/ru|0.19}}
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_RichTextAnnotation.svg  style="width:32px;"> [Вставка аннотаций c форматированным текстом](TechDraw_RichTextAnnotation/ru.md): добавляет в Вид блок форматированного текста в качестве аннотации к линии-выноске. {{Version/ru|0.19}}
+
+
+</div>
+
+-   <img alt="" src=images/TechDraw_CosmeticVertex.svg  style="width:" height="32px;"><img alt="" src=images/Toolbar_flyout_arrow_blue_background.svg  style="width:" height="32px;"> Add Cosmetic Vertices:
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_CosmeticVertex.svg  style="width:32px;"> [Добавить вспомогательную вершину](TechDraw_CosmeticVertex/ru.md): добавляет вершину, которая не является частью исходной геометрии. {{Version/ru|0.19}}
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_Midpoints.svg  style="width:32px;"> [Добавить вершины по центрам граней](TechDraw_Midpoints/ru.md): добавляет вспомогательные вершины в центральные точки выбраных граней.
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_Quadrants.svg  style="width:32px;"> [Добавить 4-ре вершины по краям окружности](TechDraw_Quadrants/ru.md): Инструмент Четверть добавляет вспомогательные вершины в окружность, деля ее на четверти. {{Version/ru|0.19}}
+
+
+</div>
+
+-   <img alt="" src=images/TechDraw_FaceCenterLine.svg  style="width:" height="32px;"><img alt="" src=images/Toolbar_flyout_arrow_blue_background.svg  style="width:" height="32px;"> Add Centerlines:
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_FaceCenterLine.svg  style="width:32px;"> [Добавить осевую линию к граням](TechDraw_FaceCenterLine/ru.md): добавляет осевую линию к выбранной грани или граням. {{Version/ru|0.19}}
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_2LineCenterLine.svg  style="width:32px;"> [Добавить осевую линию между 2 линиями](TechDraw_2LineCenterLine/ru.md): добавляет осевую линию между 2 линиями. {{Version/ru|0.19}}
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_2PointCenterLine.svg  style="width:32px;"> [Добавить осевую линию между 2 точками](TechDraw_2PointCenterLine/ru.md): добавляет осевую линию между 2 точками. {{Version/ru|0.19}}
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_2PointCosmeticLine.svg  style="width:32px;"> [Добавить вспомогательную линию между 2-мя точками](TechDraw_2PointCosmeticLine/ru.md): добавить вспомогательную линию по двум точкам. {{Version/ru|0.19}}
+
+
+</div>
+
+-   <img alt="" src=images/TechDraw_CosmeticCircle.svg  style="width:32px;"> [Add Cosmetic Circle](TechDraw_CosmeticCircle.md): adds a cosmetic circle. <small>(v1.0)</small> 
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_DecorateLine.svg  style="width:32px;"> [Изменить внешний вид линий](TechDraw_DecorateLine/ru.md): позволяет изменить внешний вид выделенных линий. {{Version/ru|0.19}}
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_ShowAll.svg  style="width:32px;"> [Показать/скрыть невидимые края](TechDraw_ShowAll/ru.md): позволяет показать/скрыть невидимые линии/грани Вида. {{Version/ru|0.19}}
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_WeldSymbol.svg  style="width:32px;"> [Добавить информацию о сварке в линию-выноску](TechDraw_WeldSymbol/ru.md): добавляет символы сварки и другие параметры к существующей Линии-выноске. <small>(v0.19)</small> 
+
+
+</div>
+
+-   <img alt="" src=images/TechDraw_SurfaceFinishSymbols.svg  style="width:32px;"> [Add Surface Finish Symbol](TechDraw_SurfaceFinishSymbols.md): adds a surface finish symbol to a page. <small>(v0.21)</small> 
+
+-   <img alt="" src=images/TechDraw_HoleShaftFit.svg  style="width:32px;"> [Add Hole/Shaft Fit](TechDraw_HoleShaftFit.md): adds hole or shaft tolerances using ISO 286 to a dimension. <small>(v0.21)</small> 
+
+
+
+
+<div class="mw-translate-fuzzy">
+
+## Инструменты дополнения 
+
+
+</div>
+
+#### Attributes and modifications 
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_ExtensionCircleCenterLines.svg  style="width:32px;"> [Добавить осевые линии к окружности](TechDraw_ExtensionCircleCenterLines/ru.md): Позволяет добавить осевые линии к окружностям и дугам. {{Version/ru|0.20}}
+
+
+</div>
+
+-   <img alt="" src=images/TechDraw_ExtensionChangeLineAttributes.svg  style="width:32px;"> [Change Line Attributes](TechDraw_ExtensionChangeLineAttributes.md): changes the attributes (style, width and color) of cosmetic lines and centerlines.
+
+-   <img alt="" src=images/TechDraw_ExtensionExtendLine.svg  style="width:" height="32px;"><img alt="" src=images/Toolbar_flyout_arrow_blue_background.svg  style="width:" height="32px;"> Change Length of Cosmetic Lines or Centerlines:
+
+  - <img alt="" src=images/TechDraw_ExtensionExtendLine.svg  style="width:32px;"> [Extend Line](TechDraw_ExtensionExtendLine.md): extends a cosmetic line or centerline at both ends.
+
+  - <img alt="" src=images/TechDraw_ExtensionShortenLine.svg  style="width:32px;"> [Shorten Line](TechDraw_ExtensionShortenLine.md): shortens a cosmetic line or centerline at both ends.
+
+-   <img alt="" src=images/TechDraw_ExtensionLockUnlockView.svg  style="width:32px;"> [Lock/Unlock View](TechDraw_ExtensionLockUnlockView.md): locks or unlocks the position of a view.
+
+-   <img alt="" src=images/TechDraw_ExtensionPositionSectionView.svg  style="width:32px;"> [Position Section View](TechDraw_ExtensionPositionSectionView.md): orthogonally aligns a section view with its source view.
+
+-   <img alt="" src=images/TechDraw_ExtensionPosHorizChainDimension.svg  style="width:" height="32px;"><img alt="" src=images/Toolbar_flyout_arrow_blue_background.svg  style="width:" height="32px;"> Align Dimensions:
+
+  - <img alt="" src=images/TechDraw_ExtensionPosHorizChainDimension.svg  style="width:32px;"> [Position Horizontal Chain Dimensions](TechDraw_ExtensionPosHorizChainDimension.md): aligns horizontal dimensions to create a chain dimension.
+
+  - <img alt="" src=images/TechDraw_ExtensionPosVertChainDimension.svg  style="width:32px;"> [Position Vertical Chain Dimensions](TechDraw_ExtensionPosVertChainDimension.md): aligns vertical dimensions to create a chain dimension.
+
+  - <img alt="" src=images/TechDraw_ExtensionPosObliqueChainDimension.svg  style="width:32px;"> [Position Oblique Chain Dimensions](TechDraw_ExtensionPosObliqueChainDimension.md): aligns oblique dimensions to create a chain dimension.
+
+-   <img alt="" src=images/TechDraw_ExtensionCascadeHorizDimension.svg  style="width:" height="32px;"><img alt="" src=images/Toolbar_flyout_arrow_blue_background.svg  style="width:" height="32px;"> Evenly Space Dimensions:
+
+  - <img alt="" src=images/TechDraw_ExtensionCascadeHorizDimension.svg  style="width:32px;"> [Cascade Horizontal Dimensions](TechDraw_ExtensionCascadeHorizDimension.md): evenly spaces horizontal dimensions.
+
+  - <img alt="" src=images/TechDraw_ExtensionCascadeVertDimension.svg  style="width:32px;"> [Cascade Vertical Dimensions](TechDraw_ExtensionCascadeVertDimension.md): evenly spaces vertical dimensions.
+
+  - <img alt="" src=images/TechDraw_ExtensionCascadeObliqueDimension.svg  style="width:32px;"> [Cascade Oblique Dimensions](TechDraw_ExtensionCascadeObliqueDimension.md): evenly spaces oblique dimensions.
+
+-   <img alt="" src=images/TechDraw_ExtensionAreaAnnotation.svg  style="width:32px;"> [Calculate the area of selected faces](TechDraw_ExtensionAreaAnnotation.md): calculates the area of selected faces and inserts an area annotation.
+
+-   <img alt="" src=images/TechDraw_ExtensionArcLengthAnnotation.svg  style="width:32px;"> [Calculate the arc length of selected edges](TechDraw_ExtensionArcLengthAnnotation.md): calculates the arc length of selected edges and inserts an arc length annotation. <small>(v1.0)</small> 
+
+-   <img alt="" src=images/TechDraw_ExtensionCustomizeFormat.svg  style="width:32px;"> [Customize format label](TechDraw_ExtensionCustomizeFormat.md): customizes the formatting of a balloon text or dimension text. GD&T symbols and other special character can be added.
+
+#### Centerlines and threading 
+
+-   <img alt="" src=images/TechDraw_ExtensionCircleCenterLines.svg  style="width:" height="32px;"><img alt="" src=images/Toolbar_flyout_arrow_blue_background.svg  style="width:" height="32px;"> Add Centerlines:
+
+  - <img alt="" src=images/TechDraw_ExtensionCircleCenterLines.svg  style="width:32px;"> [Add Circle Centerlines](TechDraw_ExtensionCircleCenterLines.md): adds centerlines to circles and arcs.
+
+  - <img alt="" src=images/TechDraw_ExtensionHoleCircle.svg  style="width:32px;"> [Add Bolt Circle Centerlines](TechDraw_ExtensionHoleCircle.md): adds centerlines to a circular pattern of circles.
+
+-   <img alt="" src=images/TechDraw_ExtensionThreadHoleSide.svg  style="width:" height="32px;"><img alt="" src=images/Toolbar_flyout_arrow_blue_background.svg  style="width:" height="32px;"> Add Cosmetic Threads:
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_ExtensionThreadHoleSide.svg  style="width:32px;"> [Обозначить внутреннюю резьбу в разрезе отверстия](TechDraw_ExtensionThreadHoleSide/ru.md): добавляет внутреннюю резьбу к разрезу отверстия. {{Version/ru|0.20}}
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_ExtensionThreadHoleBottom.svg  style="width:32px;"> [Обозначить внутреннюю резьбу отверстия с сечением вдоль оси](TechDraw_ExtensionThreadHoleBottom/ru.md): добавляет внутреннюю резьбу к отверстию с сечением вдоль оси. {{Version/ru|0.20}}
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_ExtensionThreadBoltSide.svg  style="width:32px;"> [Обозначить наружную резьбу в разрезе стержня](TechDraw_ExtensionThreadBoltSide/ru.md): добавляет наружную резьбу к разрезу стержня. {{Version/ru|0.20}}
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_ExtensionThreadBoltBottom.svg  style="width:32px;"> [Обозначить наружную резьбу стержня с сечением вдоль оси](TechDraw_ExtensionThreadBoltBottom/ru.md): добавляет наружную резьбу к стердню с сечением вдоль оси. {{Version/ru|0.20}}
+
+
+</div>
+
+-   <img alt="" src=images/TechDraw_ExtensionVertexAtIntersection.svg  style="width:" height="32px;"><img alt="" src=images/Toolbar_flyout_arrow_blue_background.svg  style="width:" height="32px;"> Add Vertexes:
+
+  - <img alt="" src=images/TechDraw_ExtensionVertexAtIntersection.svg  style="width:32px;"> [Add Cosmetic Intersection Vertex(es)](TechDraw_ExtensionVertexAtIntersection.md): adds cosmetic vertex(es) at the intersection(s) of selected edges.
+
+  - <img alt="" src=images/TechDraw_CommandAddOffsetVertex.svg  style="width:32px;"> [Add an offset vertex](TechDraw_CommandAddOffsetVertex.md): adds a cosmetic vertex at a specified offset from a selected vertex. <small>(v1.0)</small> 
+
+-   <img alt="" src=images/TechDraw_ExtensionDrawCosmCircle.svg  style="width:" height="32px;"><img alt="" src=images/Toolbar_flyout_arrow_blue_background.svg  style="width:" height="32px;"> Add Cosmetic Circles or Arcs:
+
+  - <img alt="" src=images/TechDraw_ExtensionDrawCosmCircle.svg  style="width:32px;"> [Add Cosmetic Circle](TechDraw_ExtensionDrawCosmCircle.md): adds a cosmetic circle based on two vertexes.
+
+  - <img alt="" src=images/TechDraw_ExtensionDrawCosmArc.svg  style="width:32px;"> [Add Cosmetic Arc](TechDraw_ExtensionDrawCosmArc.md): adds a cosmetic counter clockwise arc based on three vertexes.
+
+  - <img alt="" src=images/TechDraw_ExtensionDrawCosmCircle3Points.svg  style="width:32px;"> [Add Cosmetic Circle 3 Points](TechDraw_ExtensionDrawCosmCircle3Points.md): adds a cosmetic circle based on three vertexes.
+
+-   <img alt="" src=images/TechDraw_ExtensionLineParallel.svg  style="width:" height="32px;"><img alt="" src=images/Toolbar_flyout_arrow_blue_background.svg  style="width:" height="32px;"> Add Cosmetic Parallel or Perpendicular Lines:
+
+  - <img alt="" src=images/TechDraw_ExtensionLineParallel.svg  style="width:32px;"> [Add Cosmetic Parallel Line](TechDraw_ExtensionLineParallel.md): adds a cosmetic line parallel to another line through a vertex.
+
+  - <img alt="" src=images/TechDraw_ExtensionLinePerpendicular.svg  style="width:32px;"> [Add Cosmetic Perpendicular Line](TechDraw_ExtensionLinePerpendicular.md): adds a cosmetic line perpendicular to another line through a vertex.
+
+#### Dimensions
+
+Several of the Extensions dimension tools are listed under [Dimensions](#Dimensions.md) above.
+
+-   <img alt="" src=images/TechDraw_ExtensionInsertDiameter.svg  style="width:" height="32px;"><img alt="" src=images/Toolbar_flyout_arrow_blue_background.svg  style="width:" height="32px;"> Insert Prefix:
+
+  - <img alt="" src=images/TechDraw_ExtensionInsertDiameter.svg  style="width:32px;"> [Insert \'⌀\' Prefix](TechDraw_ExtensionInsertDiameter.md): inserts a \'⌀\' symbol at the beginning of the dimension text.
+
+  - <img alt="" src=images/TechDraw_ExtensionInsertSquare.svg  style="width:32px;"> [Insert \'□\' Prefix](TechDraw_ExtensionInsertSquare.md): inserts a \'□\' symbol at the beginning of the dimension text.
+
+  - <img alt="" src=images/TechDraw_ExtensionInsertRepetition.svg  style="width:32px;"> [Insert \'n×\' Prefix](TechDraw_ExtensionInsertRepetition.md): inserts a repeated feature count at the beginning of the dimension text. <small>(v1.0)</small> 
+
+  - <img alt="" src=images/TechDraw_ExtensionRemovePrefixChar.svg  style="width:32px;"> [Remove Prefix](TechDraw_ExtensionRemovePrefixChar.md): removes all symbols at the beginning of the dimension text.
+
+-   <img alt="" src=images/TechDraw_ExtensionIncreaseDecimal.svg  style="width:" height="32px;"><img alt="" src=images/Toolbar_flyout_arrow_blue_background.svg  style="width:" height="32px;"> Change Decimal Places:
+
+  - <img alt="" src=images/TechDraw_ExtensionIncreaseDecimal.svg  style="width:32px;"> [Increase Decimal Places](TechDraw_ExtensionIncreaseDecimal.md): increases the number of decimal places of the dimension text.
+
+  - <img alt="" src=images/TechDraw_ExtensionDecreaseDecimal.svg  style="width:32px;"> [Decrease Decimal Places](TechDraw_ExtensionDecreaseDecimal.md): decreases the number of decimal places of the dimension text.
+
+### Miscellaneous
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_CosmeticEraser.svg  style="width:32px;"> [Удалить вспомогательный объект](TechDraw_CosmeticEraser/ru.md): удаляет вспомогательные объекты с чертежа. {{Version/ru|0.19}}
+
+
+</div>
+
+### Obsolete tools 
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_ClipGroupAdd.svg  style="width:32px;"> [Добавить Вид в группу](TechDraw_ClipGroupAdd/ru.md): Добавляет существующий Вид в группу.
+
+
+</div>
+
+
+<div class="mw-translate-fuzzy">
+
+-   <img alt="" src=images/TechDraw_ClipGroupRemove.svg  style="width:32px;"> [Удалить Вид из группы](TechDraw_ClipGroupRemove/ru.md): Удаляет вид из группы.
+
+
+</div>
+
+-   <img alt="" src=images/TechDraw_MoveView.svg  style="width:32px;"> [Move View](TechDraw_MoveView.md): moves a view and its dependents to a different page. Not available in <small>(v1.0)</small> .
+
+
+
+## Дополнительные возможности 
+
+-   [Группы Линий](TechDraw_LineGroup/ru.md): позволяет назначить толщину различным типам линий по умолчанию.
+-   [Шаблоны](TechDraw_Templates/ru.md): шаблоны по умолчанию, определенные для страниц чертежей.
+-   [Штриховка](TechDraw_Hatching/ru.md): объяснение различных методов штриховки.
+-   [Геометрические размеры и допуски](TechDraw_Geometric_dimensioning_and_tolerancing/ru.md): руководство по указанию геометрических размеров и допусков.
+
+
+
+## Настройки
+
+-   <img alt="" src=images/Preferences-techdraw.svg  style="width:32px;"> [Настройки](TechDraw_Preferences/ru.md): настройки значений по умолчанию для страницы чертежа, такие как угол проекции, цвета, размеры текста и стили линий.
+
+
+
+## Программирование
+
+
+<div class="mw-translate-fuzzy">
+
+Инструменты TechDraw можно использовать в [macros](macros/ru.md) и в консоли [Python](Python/ru.md) с помощью двух APIs.
+
+-   [TechDraw API](TechDraw_API/ru.md)
+-   [TechDrawGui API](TechDrawGui_API/ru.md)
+
+
+</div>
+
+
+
+## Ограничения
+
+-   Do not cut, copy and paste TechDraw objects in the [Tree view](Tree_view.md) as this generally does not work out well.
+-   Do not drag TechDraw objects in the [Tree view](Tree_view.md) with the mouse.
+
+
+
+## Руководства
+
+
+<div class="mw-translate-fuzzy">
+
+-   [TechDraw руководство для начинающих](Basic_TechDraw_Tutorial/ru.md): введение в создание чертежей с помощью Верстака TechDraw.
+-   [Создание нового шаблона](TechDraw_TemplateHowTo/ru.md): инструкции по созданию нового шаблона страницы в Inkscape для использования с Верстака TechDraw.
+-   [Measurement Of Angles On Holes](Measurement_Of_Angles_On_Holes/ru.md): инструкция по добавлению осевых линий и последующих угловых представлений на отверстиях.
+-   [Разнообразная информация](TechDraw_HowTo_Page/ru.md): инструкции по различным настройкам, таким как обозначение центральных осей и т. п.
+-   [Создание окружностей с заданным шагом](TechDraw_Pitch_Circle_Tutorial/ru.md): инструкция по созданию окружностей по траектории с шагом.
+
+
+</div>
+
+Видео уроки by sliptonic
+
+-   TechDraw Workbench [Part 1 (Basics)](https://www.youtube.com/watch?v=7LbOmSGW9F0), [Part 2 (Dimensions)](https://www.youtube.com/watch?v=z3w84RfvqaE), [Part 3 (Multiview)](https://www.youtube.com/watch?v=uNjXg-m38aI)
+-   Верстак TechDraw [Part 4 (Section and Detail)](https://www.youtube.com/watch?v=3zSdeFV6I5o), [Part 5 (Customizing Templates)](https://www.youtube.com/watch?v=kcmdJ7xa7gg)
+
+## Development
+
+Do you want to know about the future of the TechDraw Workbench? Visit [the TechDraw Roadmap Page](TechDraw_Roadmap.md) to learn more.
+
+
+<div class="mw-translate-fuzzy">
+
+
+
+
+
+</div>
+
+
+{{TechDraw_Tools_navi
+
+}}
+
+
+
+---
+⏵ [documentation index](../README.md) > [Workbenches](Category_Workbenches.md) > [TechDraw](Category_TechDraw.md) > TechDraw Workbench/ru

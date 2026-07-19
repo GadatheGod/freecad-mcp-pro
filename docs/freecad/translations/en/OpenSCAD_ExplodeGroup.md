@@ -1,0 +1,47 @@
+---
+ GuiCommand:
+   Name: OpenSCAD ExplodeGroup
+   MenuLocation: OpenSCAD , Explode Group‏‎
+   Workbenches: OpenSCAD_Workbench
+---
+
+# OpenSCAD ExplodeGroup/en
+
+## Description
+
+This feature explodes a fusion or a compound back to single parts applying random colours to these parts.
+
+## Usage
+
+1.  Select fusion/compound to be exploded
+2.  Click on <img alt="" src=images/OpenSCAD_ExplodeGroup.svg  style="width:32px;"> or choose **OpenSCAD** → **<img src="images/OpenSCAD_ExplodeGroup.svg" width=32px> Explode Group** from the top menu.
+
+## Limitations
+
+The feature works only on fusions/compounds consisting of:
+
+-   part primitives from Part Workbench
+-   extruded parts from Part Workbench
+-   revolved parts from Part Workbench
+
+The feature will **NOT** work on:
+
+-   Pads/Revolution-parts from Part Design Workbench
+-   Arrays from Draft Workbench
+
+## Notes
+
+For dissolving arrays from Draft Workbench use [Draft Downgrade](Draft_Downgrade.md).
+
+
+
+
+
+{{OpenSCAD_Tools_navi
+
+}}
+
+
+
+---
+⏵ [documentation index](../README.md) > [OpenSCAD](OpenSCAD_Workbench.md) > OpenSCAD ExplodeGroup/en
