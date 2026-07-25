@@ -21,6 +21,11 @@ Create 3D parts, run FEM analysis, generate drawings, and more — all through n
 **Sample Model with Opencode + Qwen 3.6 35B A3B + Llama.cpp + Freecad MCP + Mattpocock skills(Freecad Crafted) -> Yes 3d modelling via AI is possible.!.****
 <img width="3772" height="1076" alt="image" src="https://github.com/user-attachments/assets/01a134b1-80a0-4804-9aa5-8dd6ea1b09c4" />
 
+<img width="3772" height="1076" alt="image" src="https://github.com/user-attachments/assets/1bc1363a-60e3-42b2-ac5c-e492799ecf0a" />
+
+<img width="3772" height="1076" alt="image" src="https://github.com/user-attachments/assets/36da3829-93bc-4822-b802-104873855f9f" />
+
+STILL ONLY SMALL 3D PARTS ITS ABLE TO MAKE WITH 35B PARAMETER MODEL, BUT FABLE 5 EXECUTES COMPLEX CAD MODELS EVEN HUMANOID ROBOTS !.
 
 ## 📦 Installation
 
