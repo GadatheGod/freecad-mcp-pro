@@ -16,7 +16,11 @@ Create 3D parts, run FEM analysis, generate drawings, and more — all through n
 - **Screenshot Capture**: Get view screenshots from any angle
 - **Parts Library**: Insert pre-made parts from FreeCAD library
 - **Custom Python**: Execute arbitrary Python code in FreeCAD
-- **Remote Connections**: Control FreeCAD from another machine
+- **Remote Connections**: Control FreeCAD from another machine**
+  
+**Sample Model with Opencode + Qwen 3.6 35B A3B + Llama.cpp + Freecad MCP + Mattpocock skills(Freecad Crafted) -> Yes 3d modelling via AI is possible.!.****
+<img width="3772" height="1076" alt="image" src="https://github.com/user-attachments/assets/01a134b1-80a0-4804-9aa5-8dd6ea1b09c4" />
+
 
 ## 📦 Installation
 
